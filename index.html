@@ -60,6 +60,28 @@ if (LoggedIn === "true") {
 LoggedOn(); 
 }
 else {
+swal({
+ title: "Login", 
+  content: {
+    element: "input",
+    attributes: {
+      placeholder: "Username..."
+    },
+  },
+}).then((value) => {
+if (value === "dev111") {
+	swal({
+ title: "Login", 
+  content: {
+    element: "input",
+    attributes: {
+      placeholder: "Password...",
+		type: "Password"
+    },
+  },
+}).then((value) => {
+if (value === "securelogin") {
+localStorage.setItem("loggedin", "true"); 
 LoggedOn(); 
 }
 		else {
@@ -135,7 +157,13 @@ function backgroundfadeout() {
 	
 	
 function LaunchUlyssesGame() {
-window.location.replace("skywardlaucnher.github.io/ulysses"); 
+swal({
+  title: "Hang On Tight!",
+  text: "We're processing your request!",
+  icon: "success",
+  button: "Got It!",
+  timer: 3000
+})
 }
 	
  
@@ -177,7 +205,8 @@ swal({
 title: "All Done Here!",
   text: "This Tab May Be Closed!",
   icon: "success",
-  button: "Got It!"
+  button: "Got It!",
+  timer: 1000
 });
 				document.getElementById("RandomFloatingGuy").style.zIndex = "8"; 
 			}
